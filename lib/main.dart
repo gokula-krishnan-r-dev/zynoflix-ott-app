@@ -59,7 +59,7 @@ class ZynoFlixLogo extends StatelessWidget {
                 ),
               ],
             ),
-            child: _buildPlayLogo(),
+            child: Image.asset(AppConfig.logoPath),
           ),
         
         // Logo text
@@ -133,47 +133,11 @@ class ZynoFlixLogo extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: _buildPlayLogo(),
+                child: Image.asset(AppConfig.logoPath),
               ),
             ],
           ),
       ],
-    );
-  }
-  
-  Widget _buildPlayLogo() {
-    return CustomPaint(
-      size: Size(size, size),
-      painter: PlayButtonPainter(
-        color: AppConfig.primaryColor,
-      ),
-    );
-  }
-  
-  Widget _buildFallbackLogo() {
-    return Container(
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            AppConfig.primaryColor,
-            AppConfig.primaryColor.withOpacity(0.8),
-            AppConfig.secondaryColor,
-          ],
-        ),
-      ),
-      child: Center(
-        child: Text(
-          'S',
-          style: TextStyle(
-            color: AppConfig.textColor,
-            fontWeight: FontWeight.bold,
-            fontSize: size * 0.5,
-          ),
-        ),
-      ),
     );
   }
 }
